@@ -17,9 +17,9 @@ public class TInmueble
     private int idDuenion;
     private String stLlocalidad;
     private String stDidireccion;
-    private int intCosti;
+    private int intCosto;
     private int intHabitaciones;
-    private int intBanion;
+    private int intBanios;
     private String strResenia;
     private int intTamanio;
 
@@ -33,9 +33,9 @@ public class TInmueble
         this.idDuenion = idDuenion;
         this.stLlocalidad = stLlocalidad;
         this.stDidireccion = stDidireccion;
-        this.intCosti = intCosti;
+        this.intCosto = intCosti;
         this.intHabitaciones = intHabitaciones;
-        this.intBanion = intBanion;
+        this.intBanios = intBanion;
         this.strResenia = strResenia;
         this.intTamanio = intTamanio;
     }
@@ -100,14 +100,14 @@ public class TInmueble
         this.stDidireccion = stDidireccion;
     }
 
-    public int getIntCosti() 
+    public int getIntCosto() 
     {
-        return intCosti;
+        return intCosto;
     }
 
-    public void setIntCosti(int intCosti) 
+    public void setIntCosto(int intCosto) 
     {
-        this.intCosti = intCosti;
+        this.intCosto = intCosto;
     }
 
     public int getIntHabitaciones() 
@@ -120,14 +120,14 @@ public class TInmueble
         this.intHabitaciones = intHabitaciones;
     }
 
-    public int getIntBanion() 
+    public int getIntBanios() 
     {
-        return intBanion;
+        return intBanios;
     }
 
-    public void setIntBanion(int intBanion) 
+    public void setIntBanios(int intBanios) 
     {
-        this.intBanion = intBanion;
+        this.intBanios = intBanios;
     }
 
     public String getStrResenia() 
