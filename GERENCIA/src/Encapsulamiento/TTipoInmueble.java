@@ -9,6 +9,38 @@ package Encapsulamiento;
  *
  * @author GAb
  */
-public class TTipoInmueble {
+public class TTipoInmueble 
+{
+    
+    private int idTipo;
+    private String strDescripcionTipo;
+
+    public TTipoInmueble() {}
+    
+    public TTipoInmueble(int idTipo, String strDescripcionTipo) 
+    {
+        this.idTipo = idTipo;
+        this.strDescripcionTipo = strDescripcionTipo;
+    }
+
+    public int getIdTipo() 
+    {
+        return idTipo;
+    }
+
+    public void setIdTipo(int idTipo) 
+    {
+        this.idTipo = idTipo;
+    }
+
+    public String getStrDescripcionTipo() 
+    {
+        return strDescripcionTipo;
+    }
+
+    public void setStrDescripcionTipo(String strDescripcionTipo) 
+    {
+        this.strDescripcionTipo = strDescripcionTipo;
+    }
     
 }
