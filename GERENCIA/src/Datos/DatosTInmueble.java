@@ -8,6 +8,9 @@ package Datos;
 import Encapsulamiento.TInmueble;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -41,4 +44,46 @@ public class DatosTInmueble
         }
     }
     
+    
+    public static List<TInmueble> GetTInmueble(Connection conexion, int parametro) throws Exception
+    {
+        List<TInmueble> listaTProducto = new ArrayList <TInmueble> ();
+        TInmueble tInmueble = null;
+        try
+        {
+            CallableStatement statement= (CallableStatement) conexion.prepareCall("EXECUTE﻿usp_GetInmueble ?,?");
+            
+            statement.setInt("intParametro", parametro);
+            statement.setString("strValor", null);
+            
+            ResultSet resultSet = statement.executeQuery();
+            
+            while(resultSet.next())
+            {
+                 tInmueble = new TInmueble
+                        (
+                                resultSet.getString("strDescipcion"), 
+                                resultSet.getString("stlLocalidad"), 
+                                resultSet.getString("stDdireccion"), 
+                                resultSet.getInt("intCosto"), 
+                                resultSet.getInt("intHabitaciones"), 
+                                resultSet.getInt("intBanios"), 
+                                resultSet.getString("strResenia"), 
+                                resultSet.getInt("intTamanio"), 
+                                resultSet.getString("strDescripcionTipo"), 
+                                resultSet.getString("strNombres")
+                        );
+                
+                listaTProducto.add(tInmueble);
+            }
+        }
+        catch(Exception ex)
+        {
+            throw new Exception(ex.getMessage());
+        }
+        finally
+        {
+            return listaTProducto;
+        }
+    }
 }

@@ -23,9 +23,26 @@ public class TInmueble
     private String strResenia;
     private int intTamanio;
 
+    private String strDescripcionTipo;
+    private String strNombres;
+
+    public TInmueble(String strDescripcion, String stLlocalidad, String stDidireccion, int intCosto, int intHabitaciones, int intBanios, String strResenia, int intTamanio, String strDescripcionTipo, String strNombres) 
+    {
+        this.strDescripcion = strDescripcion;
+        this.stLlocalidad = stLlocalidad;
+        this.stDidireccion = stDidireccion;
+        this.intCosto = intCosto;
+        this.intHabitaciones = intHabitaciones;
+        this.intBanios = intBanios;
+        this.strResenia = strResenia;
+        this.intTamanio = intTamanio;
+        this.strDescripcionTipo = strDescripcionTipo;
+        this.strNombres = strNombres;
+    }
+
     public TInmueble() {}
 
-    public TInmueble(int idInmueble, int idTipoInmueble, String strDescripcion, int idDuenion, String stLlocalidad, String stDidireccion, int intCosti, int intHabitaciones, int intBanion, String strResenia, int intTamanio) 
+    /**public TInmueble(int idInmueble, int idTipoInmueble, String strDescripcion, int idDuenion, String stLlocalidad, String stDidireccion, int intCosti, int intHabitaciones, int intBanion, String strResenia, int intTamanio) 
     {
         this.idInmueble = idInmueble;
         this.idTipoInmueble = idTipoInmueble;
@@ -38,8 +55,28 @@ public class TInmueble
         this.intBanios = intBanion;
         this.strResenia = strResenia;
         this.intTamanio = intTamanio;
+    }*/
+
+    public String getStrDescripcionTipo() 
+    {
+        return strDescripcionTipo;
     }
 
+    public void setStrDescripcionTipo(String strDescripcionTipo) 
+    {
+        this.strDescripcionTipo = strDescripcionTipo;
+    }
+
+    public String getStrNombres() 
+    {
+        return strNombres;
+    }
+
+    public void setStrNombres(String strNombres) 
+    {
+        this.strNombres = strNombres;
+    }
+        
     public int getIdInmueble() 
     {
         return idInmueble;
@@ -135,6 +172,11 @@ public class TInmueble
         return strResenia;
     }
 
+    @Override
+    public String toString() {
+        return "TInmueble{" + "idInmueble=" + idInmueble + ", idTipoInmueble=" + idTipoInmueble + ", strDescripcion=" + strDescripcion + ", idDuenion=" + idDuenion + ", stLlocalidad=" + stLlocalidad + ", stDidireccion=" + stDidireccion + ", intCosto=" + intCosto + ", intHabitaciones=" + intHabitaciones + ", intBanios=" + intBanios + ", strResenia=" + strResenia + ", intTamanio=" + intTamanio + ", strDescripcionTipo=" + strDescripcionTipo + ", strNombres=" + strNombres + '}';
+    }
+
     public void setStrResenia(String strResenia) 
     {
         this.strResenia = strResenia;
@@ -149,8 +191,4 @@ public class TInmueble
     {
         this.intTamanio = intTamanio;
     }
-
-    
-
-
 }

@@ -7,6 +7,7 @@ package Negocios;
 
 import Conexion.ConexionDB;
 import Datos.DatosTCliente;
+import static Datos.DatosTCliente.GetByUsuarioContrasenia;
 import Encapsulamiento.TCliente;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
@@ -27,7 +28,7 @@ public class NegocioFrmLogin extends ConexionDB
         {
             conexion.setAutoCommit(false);
             
-            TCliente tCliente = DatosTCliente.GetByUsuarioContrasenia(conexion, usuario, contrasenia);
+            TCliente tCliente = GetByUsuarioContrasenia(conexion, usuario, contrasenia);
             
             if(tCliente != null)
             {
@@ -47,4 +48,27 @@ public class NegocioFrmLogin extends ConexionDB
         }
     }
     
+    public static TCliente GetByNombre(String usuario, String contrasenia)
+    {
+        TCliente tCliente = null;
+        Connection conexion=GetConnection();
+        
+        try
+        {
+            conexion.setAutoCommit(false);
+            
+            tCliente = GetByUsuarioContrasenia(conexion, usuario, contrasenia);
+            
+            conexion.commit();
+        }
+        catch(Exception ex)
+        {
+            conexion.rollback();
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        finally
+        {
+            return tCliente;
+        }
+    }   
 }

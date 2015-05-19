@@ -17,6 +17,9 @@ import java.sql.ResultSet;
 public class DatosTCliente 
 {
 
+    
+    
+    
     public static TCliente GetByUsuarioContrasenia(Connection conexion, String usuario, String contrasenia) throws Exception
     {
         TCliente tCliente = null;
@@ -27,7 +30,7 @@ public class DatosTCliente
             statement.setString("strUsuario", usuario);
             statement.setString("strContrasenia", contrasenia);
             
-            ResultSet resultSet=statement.executeQuery();
+            ResultSet resultSet = statement.executeQuery();
             
             if(resultSet.next())
             {
