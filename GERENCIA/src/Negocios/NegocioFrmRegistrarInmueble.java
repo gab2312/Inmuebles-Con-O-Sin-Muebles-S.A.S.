@@ -26,7 +26,7 @@ public class NegocioFrmRegistrarInmueble extends ConexionDB
         {
             conexion.setAutoCommit(false);
             
-            DatosTInmueble.InsertAll (conexion, tInmueble);
+            DatosTInmueble.insertAll (conexion, tInmueble);
             estadoOrdenSql=true;
             
             conexion.commit();

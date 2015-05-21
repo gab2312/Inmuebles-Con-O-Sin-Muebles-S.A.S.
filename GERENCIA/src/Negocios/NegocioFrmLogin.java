@@ -48,7 +48,7 @@ public class NegocioFrmLogin extends ConexionDB
         }
     }
     
-    public static TCliente GetByNombre(String usuario, String contrasenia)
+    public static TCliente getByNombre(String usuario, String contrasenia)
     {
         TCliente tCliente = null;
         Connection conexion=GetConnection();

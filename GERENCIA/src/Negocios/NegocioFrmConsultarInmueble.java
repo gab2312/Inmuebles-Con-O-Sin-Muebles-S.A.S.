@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class NegocioFrmConsultarInmueble extends ConexionDB
 {
 
-    public static List <TInmueble> GetInmueble(int parametro)
+    public static List <TInmueble> getInmueble()
     {
         List <TInmueble> listaTInmuebles = new ArrayList <TInmueble>();
         Connection conexion = GetConnection();
@@ -28,7 +28,7 @@ public class NegocioFrmConsultarInmueble extends ConexionDB
         {
             conexion.setAutoCommit(false);
             
-            listaTInmuebles = Datos.DatosTInmueble.GetTInmueble(conexion, parametro);
+            listaTInmuebles = Datos.DatosTInmueble.get(conexion);
             
             conexion.commit();
         }

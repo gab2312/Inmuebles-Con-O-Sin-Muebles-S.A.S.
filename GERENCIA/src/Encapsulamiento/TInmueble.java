@@ -17,7 +17,7 @@ public class TInmueble
     private int idDuenion;
     private String stLlocalidad;
     private String stDidireccion;
-    private int intCosto;
+    private long intCosto;
     private int intHabitaciones;
     private int intBanios;
     private String strResenia;
@@ -25,8 +25,9 @@ public class TInmueble
 
     private String strDescripcionTipo;
     private String strNombres;
+    private int intNumeroTelefonico; 
 
-    public TInmueble(String strDescripcion, String stLlocalidad, String stDidireccion, int intCosto, int intHabitaciones, int intBanios, String strResenia, int intTamanio, String strDescripcionTipo, String strNombres) 
+    public TInmueble(String strDescripcion, String stLlocalidad, String stDidireccion, int intCosto, int intHabitaciones, int intBanios, String strResenia, int intTamanio, String strDescripcionTipo, String strNombres, int intNumeroTelefonico) 
     {
         this.strDescripcion = strDescripcion;
         this.stLlocalidad = stLlocalidad;
@@ -38,10 +39,21 @@ public class TInmueble
         this.intTamanio = intTamanio;
         this.strDescripcionTipo = strDescripcionTipo;
         this.strNombres = strNombres;
+        this.intNumeroTelefonico = intNumeroTelefonico;
     }
 
     public TInmueble() {}
 
+    public int getIntNumeroTelefonico() {
+        return intNumeroTelefonico;
+    }
+
+    public void setIntNumeroTelefonico(int intNumeroTelefonico) {
+        this.intNumeroTelefonico = intNumeroTelefonico;
+    }
+
+    
+    
     /**public TInmueble(int idInmueble, int idTipoInmueble, String strDescripcion, int idDuenion, String stLlocalidad, String stDidireccion, int intCosti, int intHabitaciones, int intBanion, String strResenia, int intTamanio) 
     {
         this.idInmueble = idInmueble;
@@ -137,12 +149,12 @@ public class TInmueble
         this.stDidireccion = stDidireccion;
     }
 
-    public int getIntCosto() 
+    public long getIntCosto() 
     {
         return intCosto;
     }
 
-    public void setIntCosto(int intCosto) 
+    public void setIntCosto(long intCosto) 
     {
         this.intCosto = intCosto;
     }
@@ -170,11 +182,6 @@ public class TInmueble
     public String getStrResenia() 
     {
         return strResenia;
-    }
-
-    @Override
-    public String toString() {
-        return "TInmueble{" + "idInmueble=" + idInmueble + ", idTipoInmueble=" + idTipoInmueble + ", strDescripcion=" + strDescripcion + ", idDuenion=" + idDuenion + ", stLlocalidad=" + stLlocalidad + ", stDidireccion=" + stDidireccion + ", intCosto=" + intCosto + ", intHabitaciones=" + intHabitaciones + ", intBanios=" + intBanios + ", strResenia=" + strResenia + ", intTamanio=" + intTamanio + ", strDescripcionTipo=" + strDescripcionTipo + ", strNombres=" + strNombres + '}';
     }
 
     public void setStrResenia(String strResenia) 

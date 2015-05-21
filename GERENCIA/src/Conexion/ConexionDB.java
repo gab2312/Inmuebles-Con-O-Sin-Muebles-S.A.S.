@@ -41,8 +41,8 @@ public class ConexionDB
         }
         catch(ClassNotFoundException | SQLException ex)
         {
-             //JOptionPane.showMessageDialog(null, ex, "Error en la Conexión con la BD "+ex.getMessage(), JOptionPane.ERROR_MESSAGE);
-	           System.out.println("Error en la Conexión con la BD" + ex.getMessage());
+             JOptionPane.showMessageDialog(null, ex, "Error en la Conexión con la BD "+ex.getMessage(), JOptionPane.ERROR_MESSAGE);
+	           //System.out.println("Error en la Conexión con la BD" + ex.getMessage());
             conexion = null;
         }        
 
